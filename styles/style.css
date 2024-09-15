@@ -85,7 +85,9 @@ header {
 	padding: 10px;
 	border-bottom: 1px solid white;
 }
-
+.navbar-button {
+	display: none;
+}
 .navbar {
 	list-style-type: none;
 	width: 100%;
@@ -251,17 +253,60 @@ header {
 		.articles-container {
 			align-items: flex-start;
 			.article {
-				/* width: 100%; */
-        width: calc(50% - 20px);
+				width: calc(50% - 20px);
 				margin-bottom: 40px;
-        
-        &:nth-child(odd) {
-          margin-right: 20px;
-        }
-        &:nth-child(even) {
-          margin-left: 20px;
-        }
+
+				&:nth-child(odd) {
+					margin-right: 20px;
+				}
+				&:nth-child(even) {
+					margin-left: 20px;
+				}
 			}
+		}
+	}
+}
+@media (width < 480px) {
+	header {
+		h1.newspaper-name {
+			border-bottom: none;
+		}
+		nav {
+			ul.navbar {
+				display: none;
+			}
+			ul.navbar-button {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				li {
+					width: 100%;
+					padding: 0.5rem 0 0.8rem;
+					a {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+						height: 100%;
+						img {
+							width: max-content;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	main {
+		.main-article {
+			margin-left: 0;
+			margin-right: 0;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.articles-container {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }
